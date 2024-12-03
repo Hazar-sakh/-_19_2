@@ -1,0 +1,16 @@
+{% extends "menu.html" %}
+
+{% block pagename %}
+    <h1>Игроки</h1>
+{% endblock %}
+
+{% block menu %}
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    {% for i in list_of_players %}
+        <p>{{ i }} <button>Написать</button></p>
+    {% endfor %}
+    <input type="button" onclick="window.location='/'" value="Вернуться на главную страницу">
+{% endblock %}

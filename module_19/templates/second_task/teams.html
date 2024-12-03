@@ -1,0 +1,16 @@
+{% extends "menu.html" %}
+
+{% block pagename %}
+    <h1>Команды</h1>
+{% endblock %}
+
+{% block menu %}
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    {% for i in teams %}
+        <p>{{ i }} <button>Вступить</button></p>
+    {% endfor %}
+    <input type="button" onclick="window.location='/'" value="Вернуться на главную страницу">
+{% endblock %}

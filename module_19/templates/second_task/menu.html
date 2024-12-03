@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FERUM - FarEast rugby union mateship</title>
+    <style>
+        /* Стили для пагинации */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            padding: 0;
+        }
+        .pagination li {
+            margin: 0 5px;
+        }
+        .pagination a {
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            color: white;
+        }
+        .pagination .current {
+            background-color: white;
+            color: white;
+        }
+        .pagination .disabled {
+            color: white;
+            pointer-events: none;
+        }
+        .pagination select {
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+    <link rel = "stylesheet" type = "text/css" href = '{% static "style.css"%}'>
+</head>
+<body>
+    <header>
+        {% block pagename %}
+        <h1>Главная страница</h1>
+        {% endblock %}
+    </header>
+    <button><a href="/reg">Регистрация</a></button>
+    <ul>
+        {% block menu %}
+        <li><a href="/">Главная страница</a></li>
+        <li><a href="/news">Новости</a></li>
+        <li><a href="/teams">Команды</a></li>
+        <li><a href="/players">Игроки</a></li>
+        {% endblock %}
+    </ul>
+    <main>
+        {% block content %}
+            <p>Над сайтом работали: питон-разработчик, слонёнок-тестер и мартышка-тимлид</p>
+        {% endblock %}
+    </main>
+</body>
+</html>
